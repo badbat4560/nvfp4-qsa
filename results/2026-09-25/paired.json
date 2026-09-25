@@ -1,0 +1,6 @@
+{
+  "same_stripped_answer": 55,
+  "n": 57,
+  "bf16_correct_nvfp4_wrong": 1,
+  "nvfp4_correct_bf16_wrong": 1
+}

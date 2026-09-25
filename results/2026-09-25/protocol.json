@@ -1,0 +1,29 @@
+{
+  "date_utc": "2026-09-25",
+  "hardware": "NVIDIA RTX PRO 6000 Blackwell",
+  "successful_cache_modes": [
+    "nvfp4",
+    "bfloat16"
+  ],
+  "mode_order": [
+    "nvfp4",
+    "bfloat16"
+  ],
+  "mtp_tokens": 3,
+  "max_model_len": 169984,
+  "max_num_seqs": 12,
+  "max_num_batched_tokens": 8192,
+  "gpu_memory_utilization": 0.94,
+  "mamba_ssm_cache_dtype": "float32",
+  "eager": false,
+  "prefix_caching": true,
+  "sequential_warmup_requests_per_mode": 2,
+  "quality_requests_per_mode": 57,
+  "speed_requests_per_mode": 24,
+  "speed_requested_output_tokens": 128,
+  "separately_warmed_concurrency_four": false,
+  "randomized_crossover": false,
+  "production_requests_routed_to_test": false,
+  "other_services_stopped": false,
+  "fp8_measured": false
+}

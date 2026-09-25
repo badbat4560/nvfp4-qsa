@@ -1,0 +1,32 @@
+{
+  "failed_configurations": [
+    {
+      "kv_cache": "bfloat16",
+      "mtp": 0,
+      "eager": false,
+      "stage": "startup profiling",
+      "error": "CUDA illegal memory access",
+      "inference_samples": 0
+    },
+    {
+      "kv_cache": "bfloat16",
+      "mtp": 0,
+      "eager": true,
+      "stage": "startup profiling",
+      "error": "CUDA illegal memory access",
+      "inference_samples": 0
+    }
+  ],
+  "standalone_gdn_probe": {
+    "hardware": "Blackwell",
+    "key_heads": 16,
+    "value_heads": 48,
+    "key_dim": 128,
+    "value_dim": 128,
+    "tokens": 64,
+    "fused_post_conv_prep": "passed after CUDA synchronization",
+    "chunk_gated_delta_rule": "passed after CUDA synchronization",
+    "root_cause_of_full_model_failure": "not isolated"
+  },
+  "cancelled_setup_attempts": "Initial wrapper-enabled MTP=4 setup and FP8 setup attempts were stopped before inference; they are not benchmark results."
+}

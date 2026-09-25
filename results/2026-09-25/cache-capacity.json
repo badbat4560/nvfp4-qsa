@@ -1,0 +1,16 @@
+{
+  "nvfp4": {
+    "available_kv_cache_gib": 5.84,
+    "planner_token_pool": 439958,
+    "max_model_len": 169984,
+    "planner_full_window_concurrency": 2.59,
+    "not_a_sustained_full_context_workload_test": true
+  },
+  "bfloat16": {
+    "available_kv_cache_gib": 5.85,
+    "planner_token_pool": 189904,
+    "max_model_len": 169984,
+    "planner_full_window_concurrency": 1.12,
+    "not_a_sustained_full_context_workload_test": true
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "baseline_qsa_sha256": "3a542647fe50b94084ff98a028a263fc5a2c71d59c3a14a2632c75ad36925f81",
+  "scope": "Local FP8-enabled baseline, not stock public upstream. Diff is for review, not a supported installer.",
+  "vllm_reported_version": "0.1.dev20073+g8e685d198",
+  "public_commit_lookup": "GitHub vllm-project/vllm commit API returned HTTP 422 on 2026-09-25; public base not resolved."
+}

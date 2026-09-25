@@ -1,0 +1,43 @@
+{
+  "date_utc": "2026-09-25",
+  "portable_wheel_build": "passed",
+  "separate_wheel_install": "passed",
+  "tests": {
+    "passed": 16,
+    "cpu": 9,
+    "gpu": 7,
+    "gpu_model": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "driver": "610.62",
+    "torch": "2.11.0+cu128",
+    "triton": "3.6.0"
+  },
+  "documented_example": {
+    "shape": [
+      1,
+      24,
+      256
+    ],
+    "finite": true,
+    "cache_bytes": 36864
+  },
+  "public_patch_apply_check": "passed",
+  "public_port_physical_spec_checks": "passed",
+  "public_port_full_server_verified": false,
+  "case_reconstruction_identical": true,
+  "completed_server_modes": [
+    "nvfp4",
+    "bfloat16"
+  ],
+  "inference_requests_per_mode": 83,
+  "measured_requests_per_mode": 81,
+  "total_benchmark_inference_requests": 166,
+  "production_restored": true,
+  "production_generation_smoke": "OK",
+  "figures_visually_reviewed": true,
+  "published": false,
+  "syntax_files": 35,
+  "public_privacy_scan": "passed",
+  "relative_document_links": "passed",
+  "raw_result_completeness": "passed",
+  "wheel_sha256": "bd41369c7eece969b29a781f0a638bb07723a051bb0b5158e35e5efadb550aad"
+}

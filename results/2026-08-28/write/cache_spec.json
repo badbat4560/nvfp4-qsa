@@ -1,0 +1,49 @@
+{
+  "config": {
+    "blocks": 2048,
+    "page": 16,
+    "kv_heads": 2,
+    "head_dim": 256
+  },
+  "formula": {
+    "data_bytes_per_KorV_per_token_per_head": 128,
+    "scale_bytes_per_KorV_per_token_per_head": 16,
+    "per_token_nvfp4_bytes(K+V, all heads)": 576,
+    "k_data_bytes": 8388608,
+    "k_scale_bytes": 1048576,
+    "v_data_bytes": 8388608,
+    "v_scale_bytes": 1048576,
+    "total_bytes": 18874368
+  },
+  "actual_allocation": {
+    "sum_numel_bytes": 18874368,
+    "torch_allocated_bytes": 18874368,
+    "alloc_overhead_bytes": 0,
+    "note": "torch rounds each block up to its allocator granularity (>=512B); numel bytes is the logical footprint"
+  },
+  "formula_matches_numel_bytes": true,
+  "capacity_ratios_QSA_KV_only": {
+    "per_token_bytes": {
+      "bf16": 2048,
+      "fp8": 1024,
+      "nvfp4": 576
+    },
+    "nvfp4_vs_bf16": 3.5556,
+    "nvfp4_vs_fp8": 1.7778,
+    "fp8_vs_bf16": 2.0
+  },
+  "scope_and_honesty": {
+    "this_is": "QSA main-KV split-buffer allocation ONLY (K/V data + fp8 group scales)",
+    "qsa_kv_ratio_vs_fp8": 1.7778,
+    "NOT_claimed": "a full-server capacity gain (e.g. +70-80%) \u2014 that would require the actual KV pool measured with the write path integrated (Slice 6, needs a window)",
+    "fixed_overhead_unchanged_by_kv_dtype": [
+      "GDN/Mamba SSM cache (FP32)",
+      "MTP=3 draft model + its KV",
+      "model weights (NVFP4)",
+      "PLE per-layer embeddings",
+      "activation/graph buffers"
+    ],
+    "implication": "server-level capacity gain < the QSA-KV-only ratio because fixed overhead does not shrink; the real number is a measured server quantity, not asserted here"
+  },
+  "gate": "PASS"
+}

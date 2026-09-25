@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+benchmarks/window/cases.json
+benchmarks/window/*-measurements.jsonl

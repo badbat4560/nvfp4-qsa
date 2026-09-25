@@ -1,0 +1,37 @@
+{
+  "torch": "2.13.0+cu130",
+  "torch_cuda": "13.0",
+  "vllm": "0.1.dev20073+g8e685d198",
+  "triton": "3.7.1",
+  "flashinfer_python": "0.6.17",
+  "transformers": "5.15.1",
+  "nvfp4_format": {
+    "fp4": "e2m1",
+    "codebook": [
+      0,
+      0.5,
+      1,
+      1.5,
+      2,
+      3,
+      4,
+      6
+    ],
+    "e2m1_max": 6.0,
+    "group_size": 16,
+    "block_scale_dtype": "float8_e4m3fn",
+    "e4m3_max": 448.0,
+    "global_scale": "(448*6)/tensor_amax (per-tensor fp32)",
+    "dequant": "x ~= fp4_decoded * block_scale / global_scale",
+    "layout": "split: data[blocks,page,kvh,hd/2] u8 (low=elem2j,high=2j+1); scale[blocks,page,kvh,hd/16] fp8"
+  },
+  "qsa_shapes": {
+    "q_heads": 24,
+    "kv_heads": 2,
+    "gqa_group": 12,
+    "head_dim": 256,
+    "qsa_layers": 12,
+    "selection_width": 2051,
+    "page_size": 16
+  }
+}

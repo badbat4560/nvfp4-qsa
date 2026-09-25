@@ -1,0 +1,6 @@
+{
+  "upstream": "https://github.com/vllm-project/vllm",
+  "revision": "e126687a9a828d513c01a07cd69f025f27d63280",
+  "source_sha256": "c501c2d2b647bdc93be3c0102f36a84446767b20cbff123314173e04757a026d",
+  "status": "port candidate; not the historical production build; no full-server test of this public port yet"
+}

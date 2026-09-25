@@ -1,0 +1,148 @@
+{
+  "bfloat16": {
+    "quality": {
+      "ag_news": {
+        "correct": 13,
+        "n": 16,
+        "accuracy": 0.8125,
+        "wilson95": [
+          0.5699111903802658,
+          0.9340840092857168
+        ],
+        "max_prompt_tokens": 163,
+        "truncated": 0
+      },
+      "sib200_en": {
+        "correct": 11,
+        "n": 16,
+        "accuracy": 0.6875,
+        "wilson95": [
+          0.44404355834741305,
+          0.8583535614521766
+        ],
+        "max_prompt_tokens": 106,
+        "truncated": 0
+      },
+      "sib200_ru": {
+        "correct": 13,
+        "n": 16,
+        "accuracy": 0.8125,
+        "wilson95": [
+          0.5699111903802658,
+          0.9340840092857168
+        ],
+        "max_prompt_tokens": 130,
+        "truncated": 0
+      },
+      "synthetic_needle": {
+        "correct": 9,
+        "n": 9,
+        "accuracy": 1.0,
+        "wilson95": [
+          0.7008549515804674,
+          1.0
+        ],
+        "max_prompt_tokens": 9280,
+        "truncated": 0
+      }
+    },
+    "speed": {
+      "1": {
+        "n": 12,
+        "ttft_median_s": 0.16560648352606222,
+        "ttft_min_s": 0.14488131500547752,
+        "ttft_max_s": 0.2669840079615824,
+        "wall_median_s": 1.0459305514814332,
+        "batch_output_tok_s": 123.48482267503908,
+        "errors": 0,
+        "output_tokens": 1536,
+        "batch_wall_s": 12.438775605987757
+      },
+      "4": {
+        "n": 12,
+        "ttft_median_s": 1.070935478026513,
+        "ttft_min_s": 0.2340864230063744,
+        "ttft_max_s": 7.607222806022037,
+        "wall_median_s": 4.148593917518156,
+        "batch_output_tok_s": 91.87993884186382,
+        "errors": 0,
+        "output_tokens": 1536,
+        "batch_wall_s": 16.71746868098853
+      }
+    },
+    "errors": []
+  },
+  "nvfp4": {
+    "quality": {
+      "ag_news": {
+        "correct": 13,
+        "n": 16,
+        "accuracy": 0.8125,
+        "wilson95": [
+          0.5699111903802658,
+          0.9340840092857168
+        ],
+        "max_prompt_tokens": 163,
+        "truncated": 0
+      },
+      "sib200_en": {
+        "correct": 12,
+        "n": 16,
+        "accuracy": 0.75,
+        "wilson95": [
+          0.505016834644919,
+          0.898179325087867
+        ],
+        "max_prompt_tokens": 106,
+        "truncated": 0
+      },
+      "sib200_ru": {
+        "correct": 12,
+        "n": 16,
+        "accuracy": 0.75,
+        "wilson95": [
+          0.505016834644919,
+          0.898179325087867
+        ],
+        "max_prompt_tokens": 130,
+        "truncated": 0
+      },
+      "synthetic_needle": {
+        "correct": 9,
+        "n": 9,
+        "accuracy": 1.0,
+        "wilson95": [
+          0.7008549515804674,
+          1.0
+        ],
+        "max_prompt_tokens": 9280,
+        "truncated": 0
+      }
+    },
+    "speed": {
+      "1": {
+        "n": 12,
+        "ttft_median_s": 0.16081558499718085,
+        "ttft_min_s": 0.132927396974992,
+        "ttft_max_s": 0.2555193249718286,
+        "wall_median_s": 1.432132964982884,
+        "batch_output_tok_s": 88.90609953021392,
+        "errors": 0,
+        "output_tokens": 1536,
+        "batch_wall_s": 17.276654899003915
+      },
+      "4": {
+        "n": 12,
+        "ttft_median_s": 0.37576963350875303,
+        "ttft_min_s": 0.1382215209887363,
+        "ttft_max_s": 3.7434159760014154,
+        "wall_median_s": 2.8761807790142484,
+        "batch_output_tok_s": 129.01576443287692,
+        "errors": 0,
+        "output_tokens": 1536,
+        "batch_wall_s": 11.905521831009537
+      }
+    },
+    "errors": []
+  }
+}

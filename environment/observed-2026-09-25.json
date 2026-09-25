@@ -1,0 +1,11 @@
+{
+  "--max-model-len": "169984",
+  "--kv-cache-dtype": "nvfp4",
+  "--gpu-memory-utilization": "0.94",
+  "--max-num-seqs": "12",
+  "--max-num-batched-tokens": "8192",
+  "--speculative-config": "{\"method\":\"mtp\",\"num_speculative_tokens\":1}",
+  "--mamba-ssm-cache-dtype": "float32",
+  "wrapper_persisted_last_good_mtp_before_window": 3,
+  "note": "Command-line values above are not necessarily effective: the wrapper overrides MTP. Maintenance evaluation explicitly selected MTP=3."
+}

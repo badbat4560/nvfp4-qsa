@@ -1,0 +1,77 @@
+{
+  "identity_note": "Download-cache metadata; large tensor files were not rehashed during maintenance.",
+  "metadata": {
+    "config.json.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "88ff35607e96faada78d4366709f5a232953e6cb"
+    },
+    "config.json.text-only.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "b74204e8ba37785a601f1e0a4efb9d7ce9615917"
+    },
+    "generation_config.json.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "3ef979b678c8e828c637b6437b6db4c3b2962db1"
+    },
+    "model-00001-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "6b7fff8d0c465fdf379f21d1f10eb43cad223d026c688b66f3b9266f11aaad02"
+    },
+    "model-00002-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "d2ef0e734c51c0c2c7a61b58e536f5caea7ae4a002a41f7a9914574d62d3d4df"
+    },
+    "model-00003-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "7f294fc1f90dc41cc81d6cf15bbd6ad8fb0e222f8d001cd9cf723ba47acd3e33"
+    },
+    "model-00004-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "58324b9e5436e9f91332325f2ac01552e55a717ece393cf37c40bc96709b1778"
+    },
+    "model-00005-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "3e0afc3d3eb1294b70e99e1f1130a0bee6bffe80f4618da0f9bc77d687c715d8"
+    },
+    "model-00006-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "629804d1fbb91e703f6dcb61b6626d1920343e6c7782f0336e5ca0735dbbd582"
+    },
+    "model-00007-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "51a1153e4f41b66c52b98dba41bc8bf98dfcd03996b6c8f71343553a0ae70a87"
+    },
+    "model-00008-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "062306ed25bf4751a09c617eac04c4d4f9045bb039389612089db15fd8a3b53c"
+    },
+    "model-00009-of-00009.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "2ef497b7b5b36a4b0a41126a347f9415e4b21cff260be59abcfbf5705b8de27a"
+    },
+    "model-00010-of-00010-graft.safetensors.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "0853c440e001862383a7b695ab7125080dd1b1b9ec5c6bf670059586c6e985a8"
+    },
+    "model.safetensors.index.json.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "6fd6aeeaffcd9504c0fce0863bcea2be96030f2276b45f2ec975f1c5e9f7acaa"
+    },
+    "preprocessor_config.json.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64"
+    },
+    "tokenizer_config.json.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "5de744b3fca2129d7186979ae47c06be33903243"
+    },
+    "video_preprocessor_config.json.metadata": {
+      "download_revision": "e20c5a85f6965100d1e004806fb5d1b63646e46e",
+      "etag": "3ba673a5ad7d4d13f54155ecd38b2a94a6dac8fe"
+    }
+  },
+  "small_file_sha256": {
+    "config.json": "dafe7bda105e0b8dcd722a6bdd9ef6b65813f70450dfdf63f21ef52a5b6e830b",
+    "model.safetensors.index.json": "6fd6aeeaffcd9504c0fce0863bcea2be96030f2276b45f2ec975f1c5e9f7acaa"
+  }
+}

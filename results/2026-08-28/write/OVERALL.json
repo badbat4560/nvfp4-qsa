@@ -1,0 +1,15 @@
+{
+  "stage_exit_codes": {
+    "w_validate": 0,
+    "cache_spec": 0,
+    "write_bench": 0,
+    "sanitizer": 0
+  },
+  "sanitizer": {
+    "synccheck": 0,
+    "racecheck": 0,
+    "memcheck": 0,
+    "initcheck": 0
+  },
+  "OVERALL": "PASS"
+}

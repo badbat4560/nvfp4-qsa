@@ -1,0 +1,5 @@
+* text=auto
+*.py text eol=lf
+*.sh text eol=lf
+*.patch text eol=lf
+*.png binary

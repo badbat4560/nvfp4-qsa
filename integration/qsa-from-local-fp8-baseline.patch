@@ -1,0 +1,226 @@
+--- a/vllm/models/qwen3_8_flash_next/nvidia/qsa.py
++++ b/vllm/models/qwen3_8_flash_next/nvidia/qsa.py
+@@ -4,6 +4,7 @@
+ 
+ from __future__ import annotations
+ 
++from dataclasses import replace
+ from typing import ClassVar, cast
+ 
+ import torch
+@@ -62,6 +63,11 @@
+     return isinstance(dtype, str) and dtype in ("fp8", "fp8_e4m3", "fp8_e4m3fn")
+ 
+ 
++def _is_qsa_nvfp4_dtype(dtype) -> bool:
++    """True for the QSA-owned packed E2M1 + group-scale cache format."""
++    return isinstance(dtype, str) and dtype in ("nvfp4", "nvfp4_4over6")
++
++
+ _QSA_FP8_SCALES: dict | None = None
+ 
+ 
+@@ -161,6 +167,8 @@
+         "bfloat16",
+         "fp8",
+         "fp8_e4m3",
++        "nvfp4",
++        "nvfp4_4over6",
+     ]
+ 
+     @staticmethod
+@@ -174,6 +182,26 @@
+     @staticmethod
+     def get_builder_cls() -> type[Qwen3_8FlashNextQSAMetadataBuilder]:
+         return Qwen3_8FlashNextQSAMetadataBuilder
++
++    @classmethod
++    def customize_spec(cls, spec: FullAttentionSpec) -> FullAttentionSpec:
++        """Expose the packed NVFP4 byte size to the hybrid cache planner.
++
++        The platform computes the attention block size before the attention
++        instance returns its final physical spec.  At that point ``head_size``
++        is still the logical QSA width, so advertise the packed K+V bytes via
++        ``state_content_bytes``.  The final instance spec uses quant mode NONE
++        and physical 144-byte K/V regions, making this transform idempotent.
++        """
++        if spec.kv_quant_mode != get_kv_quant_mode("nvfp4"):
++            return spec
++        packed_region = spec.head_size // 2 + spec.head_size // 16
++        return replace(
++            spec,
++            # Per head slot: one packed K region plus one packed V region.
++            # AttentionSpec multiplies this by ``num_heads`` itself.
++            state_content_bytes=2 * packed_region,
++        )
+ 
+     @classmethod
+     def is_sparse(cls) -> bool:
+@@ -197,6 +225,7 @@
+         # keep the real fp8 write dtype on the QSA owner only.
+         args = list(args)
+         self._qsa_kv_fp8 = False
++        self._qsa_kv_nvfp4 = False
+         self._qsa_write_dtype = "auto"
+         if len(args) > 6 and _is_qsa_fp8_dtype(args[6]):
+             self._qsa_kv_fp8 = True
+@@ -206,6 +235,14 @@
+             self._qsa_kv_fp8 = True
+             self._qsa_write_dtype = kwargs["kv_cache_dtype"]
+             kwargs["kv_cache_dtype"] = "bfloat16"
++        elif len(args) > 6 and _is_qsa_nvfp4_dtype(args[6]):
++            self._qsa_kv_nvfp4 = True
++            self._qsa_write_dtype = args[6]
++            args[6] = "bfloat16"
++        elif _is_qsa_nvfp4_dtype(kwargs.get("kv_cache_dtype")):
++            self._qsa_kv_nvfp4 = True
++            self._qsa_write_dtype = kwargs["kv_cache_dtype"]
++            kwargs["kv_cache_dtype"] = "bfloat16"
+         super().__init__(*args, **kwargs)
+         if not is_flash_attn_varlen_func_available():
+             raise NotImplementedError("Qwen3.8-Flash-Next QSA requires FlashAttention")
+@@ -213,7 +250,7 @@
+             raise NotImplementedError(
+                 "Qwen3.8-Flash-Next QSA does not support decode context parallelism"
+             )
+-        if self._qsa_kv_fp8:
++        if self._qsa_kv_fp8 or self._qsa_kv_nvfp4:
+             # do_kv_cache_update -> reshape_and_cache_flash quantizes on write
+             # using layer._k_scale / _v_scale.
+             self.kv_cache_dtype = self._qsa_write_dtype
+@@ -254,6 +291,36 @@
+             raise RuntimeError("QSA owner did not provide its top-k buffer")
+         logical_indices = topk_buffer[:num_tokens]
+         token_to_req = token_to_req[:num_tokens]
++        if getattr(self, "_qsa_kv_nvfp4", False):
++            packed_dim = self.head_size // 2
++            scale_dim = self.head_size // 16
++            storage_dim = packed_dim + scale_dim
++            if kv_cache.dtype != torch.uint8 or kv_cache.shape[-1] != 2 * storage_dim:
++                raise RuntimeError(
++                    "QSA NVFP4 cache must be uint8 with packed data and fp8 "
++                    f"group scales (last dim {2 * storage_dim})"
++                )
++            packed_cache = kv_cache.transpose(1, 2)
++            key_region, value_region = packed_cache.split(storage_dim, dim=-1)
++            key_data, key_scale = key_region.split((packed_dim, scale_dim), dim=-1)
++            value_data, value_scale = value_region.split((packed_dim, scale_dim), dim=-1)
++            from .ops.nvfp4_qsa import qsa_sparse_paged_attention_nvfp4
++
++            qsa_sparse_paged_attention_nvfp4(
++                query[:num_tokens],
++                key_data,
++                key_scale,
++                value_data,
++                value_scale,
++                float(getattr(layer, "_qsa_nvfp4_k_global", 1.0)),
++                float(getattr(layer, "_qsa_nvfp4_v_global", 1.0)),
++                logical_indices,
++                attn_metadata.block_table,
++                token_to_req,
++                output[:num_tokens],
++            )
++            return output
++
+         key_cache, value_cache = kv_cache.transpose(1, 2).split(self.head_size, dim=-1)
+         key_cache = canonicalize_singleton_dim_strides(key_cache)
+         value_cache = canonicalize_singleton_dim_strides(value_cache)
+@@ -321,11 +388,14 @@
+             raise ValueError("Qwen3.8-Flash-Next QSA requires a paged KV cache")
+         if model_config.dtype != torch.bfloat16:
+             raise NotImplementedError("Qwen3.8-Flash-Next QSA currently requires BF16")
+-        if not _is_qsa_fp8_dtype(cache_config.cache_dtype) and (
++        if not (
++            _is_qsa_fp8_dtype(cache_config.cache_dtype)
++            or _is_qsa_nvfp4_dtype(cache_config.cache_dtype)
++        ) and (
+             cache_config.cache_dtype not in ("auto", "bfloat16")
+         ):
+             raise NotImplementedError(
+-                "Qwen3.8-Flash-Next QSA requires a BF16 or fp8_e4m3 main KV cache"
++                "Qwen3.8-Flash-Next QSA requires a BF16, fp8_e4m3, or NVFP4 main KV cache"
+             )
+         if getattr(quant_config, "kv_cache_scheme", None) is not None:
+             raise NotImplementedError(
+@@ -430,7 +500,7 @@
+         # reinterprets it as fp8_e4m3 on read.
+         if self.kv_cache_torch_dtype not in (torch.bfloat16, torch.uint8):
+             raise NotImplementedError(
+-                "Qwen3.8-Flash-Next QSA requires BF16 or fp8_e4m3 cache storage"
++                "Qwen3.8-Flash-Next QSA requires BF16, fp8_e4m3, or NVFP4 cache storage"
+             )
+         self.kv_sharing_target_layer_name = None
+         self.kv_cache = torch.tensor([])
+@@ -439,6 +509,8 @@
+             # Apply calibrated per-layer fp8 scales (KYC_QSA_SCALES_JSON) if any;
+             # otherwise the 1.0 defaults keep a safe scale=1 fallback.
+             _maybe_load_qsa_fp8_scales(self, layer_id)
++        self._qsa_nvfp4_k_global = 1.0
++        self._qsa_nvfp4_v_global = 1.0
+ 
+         self.attn_backend = Qwen3_8FlashNextQSAFlashAttentionBackend
+         self.impl = Qwen3_8FlashNextQSAFlashAttentionImpl(
+@@ -481,6 +553,20 @@
+         return self.attn_backend
+ 
+     def get_kv_cache_spec(self, vllm_config: VllmConfig) -> KVCacheSpec:
++        if _is_qsa_nvfp4_dtype(self.kv_cache_dtype):
++            # vLLM binds one tensor per attention layer. Pack each K/V region as
++            # [head_dim/2 data bytes | head_dim/16 fp8 group-scale bytes].
++            # Advertise the physical width here and keep generic NVFP4 layout
++            # customization disabled: QSA owns both the writer and reader.
++            storage_dim = self.head_dim // 2 + self.head_dim // 16
++            return FullAttentionSpec(
++                block_size=vllm_config.cache_config.block_size,
++                num_kv_heads=self.num_kv_heads,
++                head_size=storage_dim,
++                head_size_v=storage_dim,
++                dtype=torch.uint8,
++                kv_quant_mode=get_kv_quant_mode("auto"),
++            )
+         return FullAttentionSpec(
+             block_size=vllm_config.cache_config.block_size,
+             num_kv_heads=self.num_kv_heads,
+@@ -529,13 +615,35 @@
+         impl = cast(Qwen3_8FlashNextQSAFlashAttentionImpl, self.impl)
+         if _QSA_CALIB_ON:
+             _qsa_calib_record(self.layer_name, key, value)
+-        impl.do_kv_cache_update(
+-            self,
+-            key,
+-            value,
+-            self.kv_cache,
+-            main_metadata.slot_mapping,
+-        )
++        if _is_qsa_nvfp4_dtype(self.kv_cache_dtype):
++            packed_dim = self.head_dim // 2
++            scale_dim = self.head_dim // 16
++            storage_dim = packed_dim + scale_dim
++            packed_cache = self.kv_cache.transpose(1, 2)
++            key_region, value_region = packed_cache.split(storage_dim, dim=-1)
++            key_data, key_scale = key_region.split((packed_dim, scale_dim), dim=-1)
++            value_data, value_scale = value_region.split((packed_dim, scale_dim), dim=-1)
++            from .ops.nvfp4_qsa import qsa_write_cache_nvfp4
++
++            qsa_write_cache_nvfp4(
++                key,
++                value,
++                key_data,
++                key_scale,
++                value_data,
++                value_scale,
++                main_metadata.slot_mapping,
++                float(self._qsa_nvfp4_k_global),
++                float(self._qsa_nvfp4_v_global),
++            )
++        else:
++            impl.do_kv_cache_update(
++                self,
++                key,
++                value,
++                self.kv_cache,
++                main_metadata.slot_mapping,
++            )
+         impl.forward_qsa(
+             self,
+             query,

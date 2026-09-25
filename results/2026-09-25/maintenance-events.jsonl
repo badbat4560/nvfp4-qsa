@@ -1,0 +1,18 @@
+{"time": 1790367180.2865686, "event": "waiting_for_drain"}
+{"time": 1790367214.026038, "event": "window_started"}
+{"time": 1790367225.8577065, "event": "mode_start", "mode": "bfloat16"}
+{"time": 1790367334.6298957, "event": "mode_start", "mode": "bfloat16"}
+{"time": 1790367730.3412497, "event": "mode_start_failed", "mode": "bfloat16"}
+{"time": 1790367730.40626, "event": "mode_start", "mode": "fp8"}
+{"time": 1790367780.829122, "event": "mode_start", "mode": "bfloat16"}
+{"time": 1790368156.7961557, "event": "mode_start_failed", "mode": "bfloat16"}
+{"time": 1790368156.908788, "event": "mode_start", "mode": "fp8"}
+{"time": 1790368365.9701738, "event": "mode_start", "mode": "nvfp4"}
+{"time": 1790368741.5983346, "event": "mode_ready", "mode": "nvfp4"}
+{"time": 1790368805.4463115, "event": "mode_finished", "mode": "nvfp4", "exit_code": 0}
+{"time": 1790368816.7338974, "event": "mode_start", "mode": "bfloat16"}
+{"time": 1790369354.0468252, "event": "mode_ready", "mode": "bfloat16"}
+{"time": 1790369422.75331, "event": "mode_finished", "mode": "bfloat16", "exit_code": 0}
+{"time": 1790369423.1308956, "event": "pair_complete_restore_requested"}
+{"time": 1790369435.1193454, "event": "restore_started"}
+{"time": 1790369788.4333713, "event": "production_healthy"}

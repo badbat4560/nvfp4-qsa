@@ -1,0 +1,61 @@
+{
+  "env": {
+    "device": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition"
+  },
+  "rows": [
+    {
+      "tokens": 1,
+      "nvfp4_cold_ms": 355.8991,
+      "nvfp4_warm_ms": 0.02934,
+      "nvfp4_us_per_token": 29.344,
+      "nvfp4_write_GBps": 0.01,
+      "fp8_reshape_cache_warm_ms": 0.01085,
+      "note": "nvfp4_write does ONE of K/V per launch (x2 for both); reshape_and_cache_flash does K+V in one op"
+    },
+    {
+      "tokens": 4,
+      "nvfp4_cold_ms": 1.3785,
+      "nvfp4_warm_ms": 0.02912,
+      "nvfp4_us_per_token": 7.28,
+      "nvfp4_write_GBps": 0.04,
+      "fp8_reshape_cache_warm_ms": 0.01091,
+      "note": "nvfp4_write does ONE of K/V per launch (x2 for both); reshape_and_cache_flash does K+V in one op"
+    },
+    {
+      "tokens": 16,
+      "nvfp4_cold_ms": 1.1922,
+      "nvfp4_warm_ms": 0.02886,
+      "nvfp4_us_per_token": 1.804,
+      "nvfp4_write_GBps": 0.16,
+      "fp8_reshape_cache_warm_ms": 0.01091,
+      "note": "nvfp4_write does ONE of K/V per launch (x2 for both); reshape_and_cache_flash does K+V in one op"
+    },
+    {
+      "tokens": 64,
+      "nvfp4_cold_ms": 0.1584,
+      "nvfp4_warm_ms": 0.02835,
+      "nvfp4_us_per_token": 0.443,
+      "nvfp4_write_GBps": 0.65,
+      "fp8_reshape_cache_warm_ms": 0.01082,
+      "note": "nvfp4_write does ONE of K/V per launch (x2 for both); reshape_and_cache_flash does K+V in one op"
+    },
+    {
+      "tokens": 256,
+      "nvfp4_cold_ms": 0.1572,
+      "nvfp4_warm_ms": 0.02851,
+      "nvfp4_us_per_token": 0.1114,
+      "nvfp4_write_GBps": 2.59,
+      "fp8_reshape_cache_warm_ms": 0.01082,
+      "note": "nvfp4_write does ONE of K/V per launch (x2 for both); reshape_and_cache_flash does K+V in one op"
+    },
+    {
+      "tokens": 1024,
+      "nvfp4_cold_ms": 0.1644,
+      "nvfp4_warm_ms": 0.02832,
+      "nvfp4_us_per_token": 0.0277,
+      "nvfp4_write_GBps": 10.41,
+      "fp8_reshape_cache_warm_ms": 0.01082,
+      "note": "nvfp4_write does ONE of K/V per launch (x2 for both); reshape_and_cache_flash does K+V in one op"
+    }
+  ]
+}

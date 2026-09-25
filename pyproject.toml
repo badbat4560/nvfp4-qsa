@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nvfp4-qsa"
+version = "0.1.0"
+description = "Independent NVFP4 QSA codec, guarded Triton cache operations and validation tools"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{name = "Yuri Pocepaev"}]
+dependencies = ["torch>=2.6"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+report = ["matplotlib>=3.9", "numpy>=2"]
+gpu-linux = ["triton>=3.3; platform_system == 'Linux'"]
+gpu-windows = ["triton-windows>=3.3; platform_system == 'Windows'"]
+
+[tool.setuptools.packages.find]
+where = ["python"]

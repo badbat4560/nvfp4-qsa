@@ -1,0 +1,343 @@
+{
+  "env": {
+    "device": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "cap": [
+      12,
+      0
+    ],
+    "free_MiB": 1077,
+    "torch": "2.13.0+cu130",
+    "seed": 1234,
+    "shapes": {
+      "q_heads": 24,
+      "kv_heads": 2,
+      "head_dim": 256,
+      "page": 16,
+      "ctx": 8192,
+      "rows_qlen": 4,
+      "topk": 2051
+    }
+  },
+  "C1_format": {
+    "independent_vs_vllm_ref_byte_match": 0.932129,
+    "nibble_mismatch_rate": 0.034607,
+    "mismatches_total": 567,
+    "mismatches_at_ties": 123,
+    "mismatches_off_ties": 444,
+    "tie_fraction_of_mismatches": 0.2169,
+    "independent_vs_vllm_ref_decoded": {
+      "n_valid_finite": 16384,
+      "cosine": 0.99999726,
+      "cosine_defect": 2.7418e-06,
+      "mse": 5.657786e-06,
+      "mean_abs_error": 3.21865e-05,
+      "rel_l2": 0.00236334,
+      "max_abs": 0.17578126,
+      "nan_total": 0,
+      "nan_valid": 0,
+      "nan_masked": 0,
+      "inf_total": 0,
+      "inf_valid": 0,
+      "inf_masked": 0,
+      "valid_clean": true
+    },
+    "nvfp4_quant_saturation": {
+      "clip6_rate": 0.0347900390625,
+      "blockscale_sat_rate": 0.0009765625
+    },
+    "cuda_vs_vllm_ref_byte_match": 0.932495,
+    "independent_vs_cuda_byte_match": 0.999634
+  },
+  "C2_unpack_gpu_vs_independent": {
+    "n_valid_finite": 16384,
+    "cosine": 1.0,
+    "cosine_defect": 0.0,
+    "mse": 0.0,
+    "mean_abs_error": 2.31e-08,
+    "rel_l2": 6e-08,
+    "max_abs": 4.8e-07,
+    "nan_total": 0,
+    "nan_valid": 0,
+    "nan_masked": 0,
+    "inf_total": 0,
+    "inf_valid": 0,
+    "inf_masked": 0,
+    "valid_clean": true
+  },
+  "C3_dense_nvfp4_vs_bf16": {
+    "qk_scores": {
+      "n_valid_finite": 196680,
+      "cosine": 0.99551511,
+      "cosine_defect": 0.0044848919,
+      "mse": 0.009071258828,
+      "mean_abs_error": 0.0758552924,
+      "rel_l2": 0.09467705,
+      "max_abs": 0.43700004,
+      "nan_total": 216,
+      "nan_valid": 0,
+      "nan_masked": 216,
+      "inf_total": 0,
+      "inf_valid": 0,
+      "inf_masked": 0,
+      "valid_clean": true
+    },
+    "softmax_probs": {
+      "n_valid_finite": 196680,
+      "cosine": 0.99541318,
+      "cosine_defect": 0.0045868158,
+      "mse": 6.159e-09,
+      "mean_abs_error": 3.71318e-05,
+      "rel_l2": 0.09572589,
+      "max_abs": 0.00326887,
+      "nan_total": 0,
+      "nan_valid": 0,
+      "nan_masked": 0,
+      "inf_total": 0,
+      "inf_valid": 0,
+      "inf_masked": 0,
+      "valid_clean": true
+    },
+    "output": {
+      "n_valid_finite": 24576,
+      "cosine": 0.99081069,
+      "cosine_defect": 0.0091893077,
+      "mse": 2.4860457e-05,
+      "mean_abs_error": 0.0039598695,
+      "rel_l2": 0.13555487,
+      "max_abs": 0.02251363,
+      "nan_total": 0,
+      "nan_valid": 0,
+      "nan_masked": 0,
+      "inf_total": 0,
+      "inf_valid": 0,
+      "inf_masked": 0,
+      "valid_clean": true
+    }
+  },
+  "C3b_fp8_vs_bf16": {
+    "qk_scores": {
+      "n_valid_finite": 196680,
+      "cosine": 0.99965483,
+      "cosine_defect": 0.0003451705,
+      "mse": 0.000705742976,
+      "mean_abs_error": 0.0211520866,
+      "rel_l2": 0.02640791,
+      "max_abs": 0.13227177,
+      "nan_total": 216,
+      "nan_valid": 0,
+      "nan_masked": 216,
+      "inf_total": 0,
+      "inf_valid": 0,
+      "inf_masked": 0,
+      "valid_clean": true
+    },
+    "softmax_probs": {
+      "n_valid_finite": 196680,
+      "cosine": 0.99961638,
+      "cosine_defect": 0.0003836155,
+      "mse": 5.18e-10,
+      "mean_abs_error": 1.03824e-05,
+      "rel_l2": 0.02776562,
+      "max_abs": 0.00134406,
+      "nan_total": 0,
+      "nan_valid": 0,
+      "nan_masked": 0,
+      "inf_total": 0,
+      "inf_valid": 0,
+      "inf_masked": 0,
+      "valid_clean": true
+    },
+    "output": {
+      "n_valid_finite": 24576,
+      "cosine": 0.99925351,
+      "cosine_defect": 0.0007464886,
+      "mse": 2.024493e-06,
+      "mean_abs_error": 0.0011231129,
+      "rel_l2": 0.03868286,
+      "max_abs": 0.00706805,
+      "nan_total": 0,
+      "nan_valid": 0,
+      "nan_masked": 0,
+      "inf_total": 0,
+      "inf_valid": 0,
+      "inf_masked": 0,
+      "valid_clean": true
+    }
+  },
+  "C4_fused_vs_dense_nvfp4": {
+    "n_valid_finite": 24576,
+    "cosine": 0.99999702,
+    "cosine_defect": 2.9802e-06,
+    "mse": 1.8536e-08,
+    "mean_abs_error": 8.63123e-05,
+    "rel_l2": 0.00370214,
+    "max_abs": 0.00048828,
+    "nan_total": 0,
+    "nan_valid": 0,
+    "nan_masked": 0,
+    "inf_total": 0,
+    "inf_valid": 0,
+    "inf_masked": 0,
+    "valid_clean": true
+  },
+  "C5_fused_vs_bf16_oracle": {
+    "n_valid_finite": 24576,
+    "cosine": 0.9907878,
+    "cosine_defect": 0.0092121959,
+    "mse": 2.4948293e-05,
+    "mean_abs_error": 0.0039665326,
+    "rel_l2": 0.13579409,
+    "max_abs": 0.02268111,
+    "nan_total": 0,
+    "nan_valid": 0,
+    "nan_masked": 0,
+    "inf_total": 0,
+    "inf_valid": 0,
+    "inf_masked": 0,
+    "valid_clean": true
+  },
+  "C6_real_correctness": {
+    "multi_request": {
+      "num_requests": 2,
+      "token_to_req": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "block_table_shape": [
+        2,
+        64
+      ],
+      "metrics": {
+        "n_valid_finite": 24576,
+        "cosine": 0.99999547,
+        "cosine_defect": 4.53e-06,
+        "mse": 7.2972e-08,
+        "mean_abs_error": 0.000163911,
+        "rel_l2": 0.0036796,
+        "max_abs": 0.00195312,
+        "nan_total": 0,
+        "nan_valid": 0,
+        "nan_masked": 0,
+        "inf_total": 0,
+        "inf_valid": 0,
+        "inf_masked": 0,
+        "valid_clean": true
+      }
+    },
+    "invalid_request_id": {
+      "bad_row_output_is_zero": true,
+      "other_rows_match_dense": {
+        "n_valid_finite": 18432,
+        "cosine": 0.9999972,
+        "cosine_defect": 2.8014e-06,
+        "mse": 5.0534e-08,
+        "mean_abs_error": 0.0001409693,
+        "rel_l2": 0.00368031,
+        "max_abs": 0.00097656,
+        "nan_total": 0,
+        "nan_valid": 0,
+        "nan_masked": 0,
+        "inf_total": 0,
+        "inf_valid": 0,
+        "inf_masked": 0,
+        "valid_clean": true
+      }
+    },
+    "duplicate_indices": {
+      "fused_vs_dense": {
+        "n_valid_finite": 24576,
+        "cosine": 1.00000083,
+        "cosine_defect": -8.345e-07,
+        "mse": 1.8607e-08,
+        "mean_abs_error": 7.3062e-05,
+        "rel_l2": 0.00025182,
+        "max_abs": 0.00097656,
+        "nan_total": 0,
+        "nan_valid": 0,
+        "nan_masked": 0,
+        "inf_total": 0,
+        "inf_valid": 0,
+        "inf_masked": 0,
+        "valid_clean": true
+      },
+      "fused_vs_ref": {
+        "n_valid_finite": 24576,
+        "cosine": 1.00000167,
+        "cosine_defect": -1.6689e-06,
+        "mse": 1.3703e-08,
+        "mean_abs_error": 7.81267e-05,
+        "rel_l2": 0.0002161,
+        "max_abs": 0.00083293,
+        "nan_total": 0,
+        "nan_valid": 0,
+        "nan_masked": 0,
+        "inf_total": 0,
+        "inf_valid": 0,
+        "inf_masked": 0,
+        "valid_clean": true
+      }
+    },
+    "slot_reuse_A_then_B": {
+      "physical_block_overwritten": 0,
+      "output_changed_A_to_B": 0.318359,
+      "fused_B_vs_dense_B": {
+        "n_valid_finite": 12288,
+        "cosine": 0.99999601,
+        "cosine_defect": 3.9935e-06,
+        "mse": 4.79745e-07,
+        "mean_abs_error": 0.0004179215,
+        "rel_l2": 0.0035257,
+        "max_abs": 0.00390625,
+        "nan_total": 0,
+        "nan_valid": 0,
+        "nan_masked": 0,
+        "inf_total": 0,
+        "inf_valid": 0,
+        "inf_masked": 0,
+        "valid_clean": true
+      },
+      "note": "packed data+scale of a used physical slot overwritten in place (same global scale); read reflects B and matches an independent dense recompute -> no stale A remnants"
+    }
+  },
+  "X_error_ratio": {
+    "mean_abs_error_fp8": 0.0011231129,
+    "mean_abs_error_nvfp4": 0.0039598695,
+    "mean_abs_ratio": 3.526,
+    "cosine_defect_fp8": 0.0007464886,
+    "cosine_defect_nvfp4": 0.0091893077,
+    "cosine_defect_ratio": 12.31,
+    "rel_l2_ratio": 3.504,
+    "note": "earlier 'x4' was the mean_abs_ratio; cosine_defect_ratio is the like-for-like"
+  },
+  "ST_staging": {
+    "per_query_row_logical_bytes": 1181376,
+    "logical_formula": "topk * (head_dim/2 packed + head_dim/16 scale) * 2(K,V) * kv_heads",
+    "per_query_row_kernel_load_addresses": 4200448,
+    "kernel_load_note": "kernel addresses head_dim data-reads (byte via d//2, read twice) + head_dim scale-reads (broadcast via d//16); L1-served, not extra DRAM",
+    "per_query_row_metadata_bytes": 16408,
+    "metadata_note": "top-k logical indices (int32) + block_table indirections (int32)",
+    "dense_bf16_whole_ctx_bytes": 16777216,
+    "reads_scale_with_topk_not_ctx": true,
+    "no_full_bf16_staging_buffer": true,
+    "fused_only_allocates": "out = empty_like(q) [rows,q_heads,head_dim]"
+  },
+  "gate_summary": {
+    "C1_decoded_parity": "PASS",
+    "C1_byte_tie_classification": {
+      "nibble_mismatch_rate": 0.034607,
+      "tie_fraction_of_mismatches": 0.2169,
+      "independent_vs_cuda_byte_match": 0.999634
+    },
+    "C2_unpack": "PASS",
+    "C3_valid_clean": true,
+    "C4_kernel_arithmetic": "PASS",
+    "C5_fused_vs_bf16_cos": 0.9907878,
+    "C6_multi_request": "PASS",
+    "C6_invalid_request": "PASS",
+    "C6_duplicate_indices": "PASS",
+    "C6_slot_reuse": "PASS",
+    "OVERALL": "PASS"
+  }
+}

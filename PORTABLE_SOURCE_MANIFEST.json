@@ -1,0 +1,21 @@
+[
+  {
+    "source": "integration/snapshot/nvfp4_qsa.py",
+    "destination": "python/nvfp4_qsa/kernels.py",
+    "source_sha256": "4f36d78b58ecfc28cefc9ad329dc4875280fc58be214c76fb6eb47525f0046f4",
+    "destination_sha256": "7e50779821320f6404c90c2da46f3cb7121a512e529d413e5d65b3abb9b7caad",
+    "changes": [
+      [
+        "from vllm.triton_utils import tl, triton",
+        "import triton\nimport triton.language as tl"
+      ]
+    ]
+  },
+  {
+    "source": "src/nvfp4_oracle.py",
+    "destination": "python/nvfp4_qsa/oracle.py",
+    "source_sha256": "da768521d9a3f6eb6531bc64e896c0b061037ca64bb5232a7d2dd066570041a9",
+    "destination_sha256": "e73c3fd05b608d5a7efb1f784f14eaa0157bc07d126f357993d2747ceb9bd580",
+    "changes": []
+  }
+]

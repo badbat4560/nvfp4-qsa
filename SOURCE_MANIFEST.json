@@ -1,0 +1,194 @@
+[
+  {
+    "file": "src/boundary_matrix.py",
+    "source_sha256": "3e1266c88d7c7d81927c1a10cf099ed58ddf863e3add544fbece0139f9f4e138",
+    "distributed_sha256": "3e1266c88d7c7d81927c1a10cf099ed58ddf863e3add544fbece0139f9f4e138",
+    "modified": false
+  },
+  {
+    "file": "src/metrics.py",
+    "source_sha256": "c7618b971cf39dca84aaffee951329d2b03d335cc514eb181be2b2c9d0818777",
+    "distributed_sha256": "c7618b971cf39dca84aaffee951329d2b03d335cc514eb181be2b2c9d0818777",
+    "modified": false
+  },
+  {
+    "file": "src/nvfp4_kernel.py",
+    "source_sha256": "dc2b2b072d29c22ccc116ed6854de688a9c2f94fc109a4d314828414b703348e",
+    "distributed_sha256": "dc2b2b072d29c22ccc116ed6854de688a9c2f94fc109a4d314828414b703348e",
+    "modified": false
+  },
+  {
+    "file": "src/nvfp4_oracle.py",
+    "source_sha256": "da768521d9a3f6eb6531bc64e896c0b061037ca64bb5232a7d2dd066570041a9",
+    "distributed_sha256": "da768521d9a3f6eb6531bc64e896c0b061037ca64bb5232a7d2dd066570041a9",
+    "modified": false
+  },
+  {
+    "file": "src/qsa_fp8_harness.py",
+    "source_sha256": "2ae9e9c177462f16b5efe48f5812aa34d83a849481f88c45b97c8531bb0b3bb7",
+    "distributed_sha256": "6217301ae681e5ba1f37016958eab076ec4e46dbb3a39d1339d130b68f12f48d",
+    "modified": true
+  },
+  {
+    "file": "src/qsa_ref.py",
+    "source_sha256": "94dccf6cdb9a94efa9fb7f3eaf9d5242fe8ef13f423cdf57895f6cdbbe438a92",
+    "distributed_sha256": "94dccf6cdb9a94efa9fb7f3eaf9d5242fe8ef13f423cdf57895f6cdbbe438a92",
+    "modified": false
+  },
+  {
+    "file": "src/run_validation.py",
+    "source_sha256": "0e39b99913d4fc23359ec02eb855b4fa99cd9d6997500ccc7a7ee4802093435a",
+    "distributed_sha256": "0e39b99913d4fc23359ec02eb855b4fa99cd9d6997500ccc7a7ee4802093435a",
+    "modified": false
+  },
+  {
+    "file": "src/sanitizer_target.py",
+    "source_sha256": "51155f993acc069d2db525ad4d64f50451223759c871e85bbf987a44f8449751",
+    "distributed_sha256": "51155f993acc069d2db525ad4d64f50451223759c871e85bbf987a44f8449751",
+    "modified": false
+  },
+  {
+    "file": "slice5/src/cache_spec.py",
+    "source_sha256": "f2f3341523b968241ae984d8b387b8fe8f6df07e3e4f1ca68f0d58c952719fc4",
+    "distributed_sha256": "f2f3341523b968241ae984d8b387b8fe8f6df07e3e4f1ca68f0d58c952719fc4",
+    "modified": false
+  },
+  {
+    "file": "slice5/src/write_bench.py",
+    "source_sha256": "d92653f5483e50bc4045cd8c4483fdf939859854dbbd4ec1f2d932c3388e2670",
+    "distributed_sha256": "d92653f5483e50bc4045cd8c4483fdf939859854dbbd4ec1f2d932c3388e2670",
+    "modified": false
+  },
+  {
+    "file": "slice5/src/write_kernel.py",
+    "source_sha256": "7a0779b04104d3e8bd9792872df86043759fc7256f606d81b79fe7856da2ab1e",
+    "distributed_sha256": "7a0779b04104d3e8bd9792872df86043759fc7256f606d81b79fe7856da2ab1e",
+    "modified": false
+  },
+  {
+    "file": "slice5/src/w_sanitizer_target.py",
+    "source_sha256": "f82fb4d50f805e429defc907829998691318800f86008c6bf69c9d96dfe4d72d",
+    "distributed_sha256": "f82fb4d50f805e429defc907829998691318800f86008c6bf69c9d96dfe4d72d",
+    "modified": false
+  },
+  {
+    "file": "slice5/src/w_validate.py",
+    "source_sha256": "578863771e7fb0476e89c5a20d62d57ec5b13424f84244b3b1d202e19cb2dd6d",
+    "distributed_sha256": "578863771e7fb0476e89c5a20d62d57ec5b13424f84244b3b1d202e19cb2dd6d",
+    "modified": false
+  },
+  {
+    "file": "integration/snapshot/qsa.py",
+    "source_sha256": "38c318a096b3e059e7c515d5d51331349a94c420e4d07977071a58da2bc9997c",
+    "distributed_sha256": "38c318a096b3e059e7c515d5d51331349a94c420e4d07977071a58da2bc9997c",
+    "modified": false
+  },
+  {
+    "file": "integration/snapshot/nvfp4_qsa.py",
+    "source_sha256": "4f36d78b58ecfc28cefc9ad329dc4875280fc58be214c76fb6eb47525f0046f4",
+    "distributed_sha256": "4f36d78b58ecfc28cefc9ad329dc4875280fc58be214c76fb6eb47525f0046f4",
+    "modified": false
+  },
+  {
+    "file": "integration/snapshot/interface.py",
+    "source_sha256": "1beb62e27497ca0ac9c2598ccc81f917f1d21902ebb65745b5e81a5cb6d8005e",
+    "distributed_sha256": "1beb62e27497ca0ac9c2598ccc81f917f1d21902ebb65745b5e81a5cb6d8005e",
+    "modified": false
+  },
+  {
+    "file": "integration/test_slice6.py",
+    "source_sha256": "48429fd2a4cb7ae629c73f9eb9b3882dca7f7e7778c5dc5997b8593606ebb7d0",
+    "distributed_sha256": "2951a4046a402cce275d53315d869e38de9025f89967c4cca190b90a7f013350",
+    "modified": true
+  },
+  {
+    "file": "deployment/vllm/native_nvfp4/b12x_sanitize.py",
+    "source_sha256": "c2ede8990a8bd6383795a8d90ccb8d8c1f6d31b904809aeb86ae2f580cfbc844",
+    "distributed_sha256": "c2ede8990a8bd6383795a8d90ccb8d8c1f6d31b904809aeb86ae2f580cfbc844",
+    "modified": false
+  },
+  {
+    "file": "deployment/vllm/native_nvfp4/eagle_utils.py",
+    "source_sha256": "56cd96b77f4d7b9c485b10595613567f4928b0bdc063e5648d4af0c02efc1507",
+    "distributed_sha256": "56cd96b77f4d7b9c485b10595613567f4928b0bdc063e5648d4af0c02efc1507",
+    "modified": false
+  },
+  {
+    "file": "tests/unit/test_b12x_sanitize.py",
+    "source_sha256": "1170b091cc0efccf66d099e8beacf6ea814c6ce8686cf5c7945be67802169302",
+    "distributed_sha256": "1170b091cc0efccf66d099e8beacf6ea814c6ce8686cf5c7945be67802169302",
+    "modified": false
+  },
+  {
+    "file": "benchmarks/historical_bench_stream.py",
+    "source_sha256": "bbafd98e68b744d35a4c93a275bdd85cf94c31ebf1c07a2187165195a7bbe1ed",
+    "distributed_sha256": "09888e260e57518dd0888a4a4d201b0d0664afb06d2654b449aced75e7f217ed",
+    "modified": true
+  },
+  {
+    "file": "results/2026-08-28/read/comparisons.json",
+    "source_sha256": "74952c49eb57ddc006e937b6f75142c09b3d299dd0abe1ab515e0d2efc78d08a",
+    "distributed_sha256": "74952c49eb57ddc006e937b6f75142c09b3d299dd0abe1ab515e0d2efc78d08a",
+    "modified": false
+  },
+  {
+    "file": "results/2026-08-28/read/boundary_matrix.json",
+    "source_sha256": "4f9c2200a665a6f0bebc46f8df9b35fafac107d179720898af7a1efb2b04676d",
+    "distributed_sha256": "4f9c2200a665a6f0bebc46f8df9b35fafac107d179720898af7a1efb2b04676d",
+    "modified": false
+  },
+  {
+    "file": "results/2026-08-28/read/stage_exit_codes.json",
+    "source_sha256": "a0f1f4c34e6f630fc390298937b9357e6c8311f2a2a11c75a4ef5951b30ce16f",
+    "distributed_sha256": "a0f1f4c34e6f630fc390298937b9357e6c8311f2a2a11c75a4ef5951b30ce16f",
+    "modified": false
+  },
+  {
+    "file": "results/2026-08-28/read/OVERALL.json",
+    "source_sha256": "a255c2227ff0dec2f9640dedb3e960cb88dc41918ead9fda9b644e4f6e3ec6f5",
+    "distributed_sha256": "a255c2227ff0dec2f9640dedb3e960cb88dc41918ead9fda9b644e4f6e3ec6f5",
+    "modified": false
+  },
+  {
+    "file": "results/2026-08-28/write/cache_spec.json",
+    "source_sha256": "fa361a2dcc92e482bfcb96449d5410e080a408e844d3e4ba0b30d424d82e0263",
+    "distributed_sha256": "fa361a2dcc92e482bfcb96449d5410e080a408e844d3e4ba0b30d424d82e0263",
+    "modified": false
+  },
+  {
+    "file": "results/2026-08-28/write/OVERALL.json",
+    "source_sha256": "6cbd75c288294f5ed6e155d1ce0aa18b57dbc460a2c9c6951f9e2e1bc8499798",
+    "distributed_sha256": "6cbd75c288294f5ed6e155d1ce0aa18b57dbc460a2c9c6951f9e2e1bc8499798",
+    "modified": false
+  },
+  {
+    "file": "results/2026-08-28/write/write_bench.json",
+    "source_sha256": "c5feed47e5897311285922d6035fbd4d4f286017f86bffc9b0d32b96dbc20ecb",
+    "distributed_sha256": "c5feed47e5897311285922d6035fbd4d4f286017f86bffc9b0d32b96dbc20ecb",
+    "modified": false
+  },
+  {
+    "file": "results/2026-08-28/write/w_validate.json",
+    "source_sha256": "ec483e35e8968e00a8c22d0e9cb888072639e859feb3e54ff3b84a6b85051ce9",
+    "distributed_sha256": "ec483e35e8968e00a8c22d0e9cb888072639e859feb3e54ff3b84a6b85051ce9",
+    "modified": false
+  },
+  {
+    "file": "environment/historical.json",
+    "source_sha256": "844100040e20a7c22f81b1987aa3a5a4063ec6f196050dd209ffc7b058a144e6",
+    "distributed_sha256": "844100040e20a7c22f81b1987aa3a5a4063ec6f196050dd209ffc7b058a144e6",
+    "modified": false
+  },
+  {
+    "file": "environment/observed-2026-09-25.json",
+    "source_sha256": "7bd2bf954246b817046b4f2b8e34f211a0a4b9be06872680a208be0178d0ab03",
+    "distributed_sha256": "7bd2bf954246b817046b4f2b8e34f211a0a4b9be06872680a208be0178d0ab03",
+    "modified": false
+  },
+  {
+    "file": "environment/model-architecture.json",
+    "source_sha256": "9fd457a0d69fb42f8c7d82a27c0575e7806ff460191f4fbf38b87238db689bb5",
+    "distributed_sha256": "9fd457a0d69fb42f8c7d82a27c0575e7806ff460191f4fbf38b87238db689bb5",
+    "modified": false
+  }
+]

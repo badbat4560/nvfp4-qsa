@@ -1,0 +1,207 @@
+{
+  "created_unix": 1787915386.2570095,
+  "decode_single": {
+    "concurrency": 1,
+    "wall_s": 4.791075579996686,
+    "prompt_tokens_total": 73,
+    "output_tokens_total": 256,
+    "ttft_p50_s": 0.23446601800969802,
+    "ttft_p95_s": 0.23446601800969802,
+    "ttft_max_s": 0.23446601800969802,
+    "per_session_decode_tok_s_p50": 55.985281844509,
+    "per_session_decode_tok_s_min": 55.985281844509,
+    "aggregate_output_tok_s_e2e": 53.43267826306699,
+    "requests": [
+      {
+        "ttft_s": 0.23446601800969802,
+        "total_s": 4.789234550000401,
+        "decode_s": 4.554768531990703,
+        "decode_tok_s": 55.985281844509,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\nassistant\n<think>\nThe user wants me to continue a numbered sequence. The seque"
+      }
+    ]
+  },
+  "decode_concurrency_7": {
+    "concurrency": 7,
+    "wall_s": 5.745527493010741,
+    "prompt_tokens_total": 511,
+    "output_tokens_total": 1792,
+    "ttft_p50_s": 0.4344928279897431,
+    "ttft_p95_s": 0.4361980039975606,
+    "ttft_max_s": 0.4361980039975606,
+    "per_session_decode_tok_s_p50": 52.48465505050936,
+    "per_session_decode_tok_s_min": 46.08916690260533,
+    "aggregate_output_tok_s_e2e": 311.89477418390453,
+    "requests": [
+      {
+        "ttft_s": 0.21157760899222922,
+        "total_s": 5.7443311200040625,
+        "decode_s": 5.532753511011833,
+        "decode_tok_s": 46.08916690260533,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\nassistant\n<think>\nThe user wants me to continue a numbered sequence. The seque"
+      },
+      {
+        "ttft_s": 0.4361980039975606,
+        "total_s": 3.384286182001233,
+        "decode_s": 2.9480881780036725,
+        "decode_tok_s": 86.49673435910448,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\nassistant\n<think>\nThe user wants me to continue a numbered sequence. The seque"
+      },
+      {
+        "ttft_s": 0.4360419809963787,
+        "total_s": 5.140660346994991,
+        "decode_s": 4.704618365998613,
+        "decode_tok_s": 54.20205852252442,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\nassistant\n<think>\nThe user wants me to continue a numbered sequence. The seque"
+      },
+      {
+        "ttft_s": 0.4353143089974765,
+        "total_s": 5.2938772500056075,
+        "decode_s": 4.858562941008131,
+        "decode_tok_s": 52.48465505050936,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\nassistant\n<think>\nThe user wants me to continue a numbered sequence. The seque"
+      },
+      {
+        "ttft_s": 0.4344928279897431,
+        "total_s": 3.0867891759990016,
+        "decode_s": 2.6522963480092585,
+        "decode_tok_s": 96.14310263308097,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32"
+      },
+      {
+        "ttft_s": 0.4342395679996116,
+        "total_s": 5.412657919005142,
+        "decode_s": 4.97841835100553,
+        "decode_tok_s": 51.22108710460134,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\nassistant\n<think>\nThe user wants me to continue a numbered sequence. The seque"
+      },
+      {
+        "ttft_s": 0.4339789270015899,
+        "total_s": 5.577041466007358,
+        "decode_s": 5.1430625390057685,
+        "decode_tok_s": 49.58135314630946,
+        "output_tokens": 256,
+        "prompt_tokens": 73,
+        "text_prefix": "4\nassistant\n<think>\nThe user wants me to continue a numbered sequence. The seque"
+      }
+    ]
+  },
+  "prefill_single": {
+    "concurrency": 1,
+    "wall_s": 14.573057486006292,
+    "prompt_tokens_total": 120064,
+    "output_tokens_total": 1,
+    "ttft_p50_s": 14.56852271599928,
+    "ttft_p95_s": 14.56852271599928,
+    "ttft_max_s": 14.56852271599928,
+    "per_session_decode_tok_s_p50": 0.0,
+    "per_session_decode_tok_s_min": 0.0,
+    "aggregate_output_tok_s_e2e": 0.06861978009489396,
+    "requests": [
+      {
+        "ttft_s": 14.56852271599928,
+        "total_s": 14.568709276005393,
+        "decode_s": 0.00018656000611372292,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      }
+    ]
+  },
+  "prefill_concurrency_7": {
+    "concurrency": 7,
+    "wall_s": 101.95327860899852,
+    "prompt_tokens_total": 840448,
+    "output_tokens_total": 7,
+    "ttft_p50_s": 58.35878291299741,
+    "ttft_p95_s": 101.93883679600549,
+    "ttft_max_s": 101.93883679600549,
+    "per_session_decode_tok_s_p50": 0.0,
+    "per_session_decode_tok_s_min": 0.0,
+    "aggregate_output_tok_s_e2e": 0.06865890038559458,
+    "requests": [
+      {
+        "ttft_s": 29.411548042000504,
+        "total_s": 29.41173343999253,
+        "decode_s": 0.00018539799202699214,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      },
+      {
+        "ttft_s": 14.884383156997501,
+        "total_s": 14.884572730996297,
+        "decode_s": 0.00018957399879582226,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      },
+      {
+        "ttft_s": 58.35878291299741,
+        "total_s": 58.358964705999824,
+        "decode_s": 0.00018179300241172314,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      },
+      {
+        "ttft_s": 43.73650616798841,
+        "total_s": 43.73669341899222,
+        "decode_s": 0.00018725100380834192,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      },
+      {
+        "ttft_s": 101.93883679600549,
+        "total_s": 101.93904581900279,
+        "decode_s": 0.00020902299729641527,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      },
+      {
+        "ttft_s": 87.40050005000376,
+        "total_s": 87.4006965449953,
+        "decode_s": 0.00019649499154184014,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      },
+      {
+        "ttft_s": 73.00179287500214,
+        "total_s": 73.00197868401301,
+        "decode_s": 0.00018580901087261736,
+        "decode_tok_s": 0.0,
+        "output_tokens": 1,
+        "prompt_tokens": 120064,
+        "text_prefix": "\n\n"
+      }
+    ]
+  },
+  "redactions": [
+    "Private endpoint removed; numeric observations and synthetic output excerpts retained."
+  ],
+  "measurement_date_utc": "2026-08-28T11:09:46.257010+00:00"
+}

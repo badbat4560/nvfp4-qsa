@@ -1,0 +1,7 @@
+NVFP4 QSA research artifact
+Research and integration work by Yuri Pocepaev.
+Includes source derived from vLLM, Copyright contributors to the vLLM project,
+licensed under Apache License 2.0. Existing SPDX and copyright notices retained.
+NVIDIA, FlashInfer, PyTorch, Triton and model weights are external dependencies;
+their names do not imply endorsement. No model weights or vendor tools included.
+Apache-2.0 applies to this code package, not to any external model checkpoint.
