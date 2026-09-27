@@ -1,4 +1,4 @@
-## Fresh server evaluation: September 25, 2026 (UTC)
+## Paired server evaluation
 
 The serving model was temporarily stopped after its active and waiting request
 counts reached zero. Evaluation used an isolated container on the same RTX PRO
@@ -60,7 +60,7 @@ passed on Blackwell; that does not isolate the earlier fault. The failed
 configurations remain an integration regression to investigate. The completed
 MTP=3 runs must not be described as validation of the MTP=0 path.
 
-![September server observations](../figures/current-performance.png)
+![Paired server observations](../figures/current-performance.png)
 
 ![Small paired quality subsets](../figures/current-quality.png)
 

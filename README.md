@@ -20,7 +20,7 @@ This is an experimental cache component. It includes no model weights. The publi
 
 ## Latest server results
 
-September 25, 2026 (UTC). Same checkpoint, MTP=3, maximum model length 169,984, up to 12 sequences, scheduler budget 8,192 and float32 recurrent state.
+Same checkpoint, MTP=3, maximum model length 169,984, up to 12 sequences, scheduler budget 8,192 and float32 recurrent state.
 
 | KV format | KV budget | Planner token pool | Sequential output | Four concurrent requests |
 |---|---:|---:|---:|---:|
@@ -33,7 +33,7 @@ Both modes scored **37/48** on selected classification examples and **9/9** on s
 
 ![Paired server observations](figures/current-performance.png)
 
-See [methods and quality results](docs/current-evaluation.md), [raw observations](results/2026-09-25/), and [benchmark reconstruction](benchmarks/window/README.md). Historical August measurements use different settings and are documented in [the historical report](docs/report.md).
+See [methods and quality results](docs/current-evaluation.md), [raw observations](results/2026-09-25/), and [benchmark reconstruction](benchmarks/window/README.md). Earlier measurements use different settings and are documented in [the historical report](docs/report.md).
 
 ## Quick start
 
@@ -127,7 +127,7 @@ These commands do not send inference requests. Full-model evaluation requires a 
 
 - The complete public vLLM port has not been validated by a server run.
 - BF16 startup with MTP disabled failed in two attempts, including eager mode. The successful paired runs used MTP=3.
-- No matched FP8 serving result was collected in the September window.
+- No matched FP8 serving result was collected in the paired evaluation window.
 - Small quality subsets and single measured speed batches need broader follow-up.
 - Main-K/V storage ratios do not describe total GPU memory use; recurrent state, indexer state, weights and other buffers remain separate.
 - Historical codec tests and integrated serving use different global-scale selection policies, documented in [the evidence report](docs/report.md).

@@ -1,6 +1,6 @@
 # Evidence report
 
-Audit date: 2026-09-25. Historical measurements: 2026-08-28.
+This report distinguishes the paired serving evaluation from earlier numerical validation.
 
 ## Scope
 
@@ -107,7 +107,7 @@ reported configuration values pending independent allocator evidence. Seven
 
 ## Fresh evaluation and remaining gates
 
-See [September 25 evaluation](current-evaluation.md) for the fresh serving results,
+See [Paired serving evaluation](current-evaluation.md) for the fresh serving results,
 failed startup configurations, exact protocol and limitations. The installable
 portable wheel passed nine CPU and seven real-GPU tests on an RTX 4050 Laptop.
 A public vLLM port is pinned and passes patch/spec checks, but has not been built
