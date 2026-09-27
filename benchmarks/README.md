@@ -1,6 +1,6 @@
 # Benchmark clients
 
-`historical_bench_stream.py` preserves the August workload and metric definitions;
+`historical_bench_stream.py` preserves the earlier workload and metric definitions;
 only its private model-alias default was removed. It sends requests immediately
 when invoked. It is retained to interpret the historical record, not as the
 recommended new measurement protocol.

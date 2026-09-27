@@ -1,6 +1,6 @@
 # Remaining validation protocol
 
-September 25 completed a portable wheel build, nine CPU and seven GPU tests,
+The paired evaluation completed a portable wheel build, nine CPU and seven GPU tests,
 public-patch application/spec checks and a maintenance-window serving evaluation.
 See `current-evaluation.md` for the exact completed subset and raw results.
 MTP-disabled startup failed twice; a separate GDN warmup passed and did not locate

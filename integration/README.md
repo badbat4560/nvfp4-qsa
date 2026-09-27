@@ -1,6 +1,6 @@
 # Integration status: historical snapshot and public port candidate
 
-The September 25 read-only audit compared SHA-256 for five files in the running
+The read-only audit compared SHA-256 for five files in the running
 container to the archived sources. All five matched. `SOURCE_MANIFEST.json` holds
 the exact source hashes. This establishes source identity at that time, not
 fresh validation of the runtime's behavior.
